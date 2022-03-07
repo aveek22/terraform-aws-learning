@@ -2,7 +2,7 @@ locals {
   lambda-zip-location = "../build/app.zip"
 }
 
-resource "archive_file" "init" {
+data "archive_file" "terraform_lambda_function" {
   type = "zip"
   source_file = "../lambda/app.py"
   output_path = local.lambda-zip-location
