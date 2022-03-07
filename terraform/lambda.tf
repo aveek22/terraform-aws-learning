@@ -19,6 +19,7 @@ resource "aws_lambda_function" "terraform_lambda_function" {
   environment {
     variables = {
         foo = "bar"
+        application_environment = "${var.environment}"
     }
   }
 }
